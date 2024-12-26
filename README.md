@@ -1,5 +1,8 @@
 # Console commands
 
+### `node app.js`
+- runs the application
+
 ### `npm install express mysql2 ejs bcrypt passport passport-local express-session body-parser`
 - `npm install`: installs Node.js modules using npm (node package manager)
 - `express` 

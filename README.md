@@ -1,6 +1,6 @@
 # Console commands
 
-### `npm install express mysql2 ejs bcrypt passport express-session body-parser`
+### `npm install express mysql2 ejs bcrypt passport passport-local express-session body-parser`
 - `npm install`: installs Node.js modules using npm (node package manager)
 - `express` 
   - a web application framework for Node.js
@@ -20,6 +20,10 @@
   - handles authentication in Node.js applications
   - simplifies the login/logout process, by supporting various strategies
   - *ex: authenticates users during login*
+- `passport-local`
+  - strategy used by passport for authenticating users with a username and password
+  - verifies user credentials by comparing input with stored data
+  - *ex: checks if the entered password matches the hashed password during login*
 - `express-session`
   - used to persist user sessions across multiple requests
   - maintains the user session after login

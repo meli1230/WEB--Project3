@@ -66,7 +66,7 @@ router.get('/add-event', isLoggedIn, (req, res) => {
 router.post('/add-event', isLoggedIn, async (req, res) => {
     try {
         const {title, speaker, price, description} = req.body;
-        await pool.query('INSERT INTO events (title, speaker, price, description) VALUES (?, ?, ?)', [title, speaker, price, description]);
+        await pool.query('INSERT INTO events (title, speaker, price, description) VALUES (?, ?, ?, ?)', [title, speaker, price, description]);
         res.redirect('/manage-events');
     } catch (error) {
         console.error(error);

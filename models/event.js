@@ -15,6 +15,12 @@ const getEventById = async (eventId) => {
     const [rows] = await pool.query('SELECT * FROM events WHERE id = ?', [eventId]);
     return rows[0];
 }
+// const getAllEventsSortedByPrice = async (order = 'ASC') => {
+//     const [rows] = await pool.query(
+//         `SELECT * FROM events ORDER BY price ${order.toUpperCase() === 'DESC' ? 'DESC' : 'ASC'}`
+//     );
+//     return rows;
+// };
 
 const updateEvent = async (eventId, updatedEvent) => {
     const {title, speaker, price, description} = updatedEvent;
@@ -27,4 +33,4 @@ const deleteEvent = async (eventId) => {
     return true;
 };
 
-module.exports = {createEvent, getAllEvents, getEventById, updateEvent, deleteEvent};
+module.exports = {createEvent, getAllEvents, getEventById, getAllEventsSortedByPrice, updateEvent, deleteEvent};

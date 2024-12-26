@@ -60,6 +60,19 @@ router.get('/manage-events', isLoggedIn, async (req, res) => {
         res.status(500).send('Error fetching events and users');
     }
 });
+
+// router.get('/manage-events?sort=asc', isLoggedIn, async (req, res) => {
+//     try {
+//         const [userRows] = await pool.query('SELECT * FROM users');
+//         const users = userRows;
+//         const [eventRows] = await pool.query('SELECT * FROM events');
+//         const events = eventRows;
+//         res.render('manage-events', {users, events});
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send('Error fetching events and users');
+//     }
+// });
 router.get('/add-event', isLoggedIn, (req, res) => {
     res.render('add-event');
 });

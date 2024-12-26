@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en"> <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body class="container" style="margin-top: 50px;">
+
+    <h1>Add Event</h1>
+
+    <p><a href="/manage-events" class="btn btn-primary">Manage Events</a></p>
+    <p><a href="/logout" class="btn btn-danger">Logout</a></p>
+
+    <form action="/add-event" method="post">
+
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="speaker">Speaker:</label>
+            <input type="text" id="speaker" name="speaker" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Add Event</button>
+
+    </form>
+
+</body>
+
+</html>

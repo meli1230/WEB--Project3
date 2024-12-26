@@ -14,18 +14,33 @@
     <p><a href="/">Home</a></p>
     <p><a href="/logout">Logout</a></p>
 
-    <h2>Events</h2>
-    <ul class="list-group">
-        <% events.forEach(event => { %>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <%= event.name %> - <%= event.price %>
-                <span class="btn-group">
-                    <a href="/edit-event/<%= event.id %>" class="btn btn-primary btn-sm">Edit</a>
-                    <a href="/delete-event/<%= event.id %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure want to delete this record?')">Delete</a>
-                </span>
-            </li>
-        <% }); %>
-    </ul>
+    <div class="container mt-4">
+        <h2>Events</h2>
+        <table class="table table-striped table-bordered text-center">
+            <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Speaker</th>
+                <th>Price (€)</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% events.forEach(event => { %>
+                <tr>
+                    <td><b><%= event.title %></b></td>
+                    <td><b><%= event.speaker %></b></td>
+                    <td><b><%= event.price %></b></td>
+                    <td>
+                        <a href="/edit-event/<%= event.id %>" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/delete-event/<%= event.id %>" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+    </div>
+
 
     <p><a href="/add-event" class="btn btn-success mt-3">Add Event</a></p>
 

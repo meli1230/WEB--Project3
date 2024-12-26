@@ -24,3 +24,8 @@
   - maintains the user session after login
 - `body-parser`
   - parses data sent from forms, such as registration or login details
+---
+# Added functionalities
+### `default` - events are displayed by last added
+### `filtering` - by speaker
+### `seacrhing` - by name and speaker

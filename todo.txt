@@ -1,3 +1,1 @@
-- edit-event: unresolved event.speaker and event.price
 - add extra functionalities
-- error message if user that tries to login does not exist

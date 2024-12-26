@@ -34,7 +34,4 @@
   - parses data sent from forms, such as registration or login details
 ---
 # Added functionalities
-### `default` - events are displayed by last added
-### `filtering` - by speaker
-### `searching` - by name and speaker
 ### `sorting` - by price

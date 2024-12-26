@@ -1,14 +1,15 @@
 # Console commands
 
-### `npm install express mysql ejs bcrypt passport express-session body-parser`
+### `npm install express mysql2 ejs bcrypt passport express-session body-parser`
 - `npm install`: installs Node.js modules using npm (node package manager)
 - `express` 
   - a web application framework for Node.js
   - simplified handling HTTP requests, routing and rendering views
   - *ex: handles routes like `/register`, `/login`, `/dashboard`*
-- `mysql`
+- `mysql2`
   - a library that allows the app to interact with the MySQL database
   - stores user data
+  - contains promise support, which is used in this app (`pending`, `fulfilled`, `rejected`)
 - `ejs` (Embedded JavaScript)
   - template engine for NodeJS
   - useful for rendering data from the server to the client

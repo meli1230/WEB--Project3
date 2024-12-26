@@ -28,4 +28,5 @@
 # Added functionalities
 ### `default` - events are displayed by last added
 ### `filtering` - by speaker
-### `seacrhing` - by name and speaker
+### `searching` - by name and speaker
+### `sorting` - by price

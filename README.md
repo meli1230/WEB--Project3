@@ -39,3 +39,6 @@
 - `Sort by Price Descending`: sorts the events by price, descending
 - `Reset Sorting`: resets all sorting filters, going to the initial state of the page
 
+### View event button
+- `View`: allows you to view all event details, including the description of the event which is not visible anywhere else
+

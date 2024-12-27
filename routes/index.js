@@ -72,6 +72,22 @@ router.get('/events/sort', async (req, res) => {
         res.status(500).send('Failed to fetch events');
     }
 });
+
+router.get('/view-event/:id', isLoggedIn, async (req, res) => {
+    const eventId = req.params.id; // Extract the event ID from the URL
+    try {
+        // Query the database directly to fetch the event by ID
+        const [eventRows] = await pool.query('SELECT * FROM events WHERE id = ?', [eventId]);
+        const event = eventRows[0]; // Get the first row (event object)
+        res.render('view-event', { event });
+    } catch (error) {
+        console.error('Error fetching event details:', error); // Log the error
+        res.status(500).send('An error occurred while fetching the event details.');
+    }
+});
+
+
+
 router.get('/add-event', isLoggedIn, (req, res) => {
     res.render('add-event');
 });

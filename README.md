@@ -34,4 +34,8 @@
   - parses data sent from forms, such as registration or login details
 ---
 # Added functionalities
-### `sorting` - by price
+### Sorting by price
+- `Sort by Price Ascending`: sorts the events by price, ascending
+- `Sort by Price Descending`: sorts the events by price, descending
+- `Reset Sorting`: resets all sorting filters, going to the initial state of the page
+

@@ -92,3 +92,10 @@ body {
     border: 1px solid #434343;
 }
 /*end of table styling*/
+
+
+/*justified text*/
+.justified-text {
+    text-align: justify;
+}
+/*end of justified text*/

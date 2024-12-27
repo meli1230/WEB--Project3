@@ -17,11 +17,11 @@
     <div class="container mt-4">
         <h2>Events</h2>
 
-<!--        <div class="d-flex mb-2">-->
-<!--            <span class="mr-2">Sort by Price:</span>-->
-<!--            <a href="/manage-events?sort=asc" class="btn btn-outline-primary btn-sm mr-1">Ascending</a>-->
-<!--            <a href="/manage-events?sort=desc" class="btn btn-outline-primary btn-sm">Descending</a>-->
-<!--        </div>-->
+        <button class="btn btn-secondary" onclick="location.href='/events/sort?order=ASC'">Sort by Price (Low to High)</button>
+        <button class="btn btn-secondary" onclick="location.href='/events/sort?order=DESC'">Sort by Price (High to Low)</button>
+        <button onclick="location.href='/manage-events'" class="btn btn-primary">Reset Sorting</button>
+        <br/>
+        <br/>
 
         <table class="table table-striped table-bordered text-center">
             <thead class="table-dark">

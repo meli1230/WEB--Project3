@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const pool = require('../db');
 const router = express.Router();
+const { getEventsSortedByPrice } = require('../models/event');
 
 function isLoggedIn(req, res, next) {
     if(req.isAuthenticated()) {
@@ -61,18 +62,16 @@ router.get('/manage-events', isLoggedIn, async (req, res) => {
     }
 });
 
-// router.get('/manage-events?sort=asc', isLoggedIn, async (req, res) => {
-//     try {
-//         const [userRows] = await pool.query('SELECT * FROM users');
-//         const users = userRows;
-//         const [eventRows] = await pool.query('SELECT * FROM events');
-//         const events = eventRows;
-//         res.render('manage-events', {users, events});
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).send('Error fetching events and users');
-//     }
-// });
+router.get('/events/sort', async (req, res) => {
+    try {
+        const { order } = req.query; // Retrieve the sorting order ('ASC' or 'DESC')
+        const sortedEvents = await getEventsSortedByPrice(order || 'ASC'); // Default to ascending order
+        res.render('manage-events', { events: sortedEvents }); // Render the view with sorted events
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Failed to fetch events');
+    }
+});
 router.get('/add-event', isLoggedIn, (req, res) => {
     res.render('add-event');
 });

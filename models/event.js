@@ -1,3 +1,5 @@
+//DEFINES CRUD OPERATIONS RELATED TO EVENTS IN RELATION TO THE DATABASE
+
 const pool = require('../db');
 
 const createEvent = async (event) => {

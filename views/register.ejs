@@ -16,13 +16,17 @@
     <% } %>
     <form action="/register" method="post">
 
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="input-box" required>
+        </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="input-box" required>
+        </div>
 
-        <button type="submit">Register</button>
+        <button type="submit" class="btn-primary">Register</button>
 </form>
 
 </body>

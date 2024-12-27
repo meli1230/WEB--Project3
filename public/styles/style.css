@@ -31,10 +31,15 @@ body {
     border-color: #19195a;
 }
 
-.btn-danger:hover {
+.btn-danger {
     color: #19195a;
     background-color: hotpink;
-    border-color: hotpink;
+}
+
+.btn-danger:hover {
+    color: white;
+    background-color: #da3544;
+    border-color: #da3544;
 }
 
 .btnprimary {
@@ -62,6 +67,17 @@ body {
 .input-box {
     /*username, password*/
     background-color: #b79fed;
+}
+
+.input {
+    /*add event input boxes*/
+    background-color: #b79fed;
+    color: black;
+}
+
+.input:focus {
+    background-color: mediumpurple;
+    color: #19195a;
 }
 /*end of input elements*/
 

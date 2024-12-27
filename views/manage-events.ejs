@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Events</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body class="container" style="margin-top: 50px;">
 
     <h1>Manage Events</h1>
-    <p><a href="/">Home</a></p>
-    <p><a href="/logout">Logout</a></p>
+    <p><a href="/" class="btnprimary">Home</a></p>
+    <p><a href="/logout" class="btndanger">Logout</a></p>
 
-    <div class="container mt-4">
+    <div class="mt-4">
         <h2>Events</h2>
 
-        <button class="btn btn-secondary" onclick="location.href='/events/sort?order=ASC'">Sort by Price (Low to High)</button>
-        <button class="btn btn-secondary" onclick="location.href='/events/sort?order=DESC'">Sort by Price (High to Low)</button>
-        <button onclick="location.href='/manage-events'" class="btn btn-primary">Reset Sorting</button>
+        <button class="btn btn-secondary" onclick="location.href='/events/sort?order=ASC'">Sort by Price Ascending</button>
+        <button class="btn btn-secondary" onclick="location.href='/events/sort?order=DESC'">Sort by Price Descending</button>
+        <button onclick="location.href='/manage-events'" class="btn btn-danger">Reset Sorting</button>
         <br/>
         <br/>
 
@@ -39,8 +40,8 @@
                     <td><b><%= event.speaker %></b></td>
                     <td><b><%= event.price %></b></td>
                     <td>
-                        <a href="/edit-event/<%= event.id %>" class="btn btn-primary btn-sm">Edit</a>
-                        <a href="/delete-event/<%= event.id %>" class="btn btn-danger btn-sm">Delete</a>
+                        <a href="/edit-event/<%= event.id %>" class="btn btnprimary btn-sm">Edit</a>
+                        <a href="/delete-event/<%= event.id %>" class="btn btndanger btn-sm">Delete</a>
                     </td>
                 </tr>
             <% }) %>
@@ -49,7 +50,7 @@
     </div>
 
 
-    <p><a href="/add-event" class="btn btn-success mt-3">Add Event</a></p>
+    <p><a href="/add-event" class="btn btn-primary mt-3">Add Event</a></p>
 
 </body>
 

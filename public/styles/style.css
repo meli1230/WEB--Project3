@@ -1,3 +1,78 @@
+/*default elements*/
 body {
-    background-color: black !important;
+    background: black;
+    color: white;
 }
+/*end of default elements*/
+
+
+/*buttons*/
+.btn-primary{
+    background-color: #b9a0e3;
+    color: #000080;
+    border-color: #b9a0e3;
+}
+
+.btn-primary:hover {
+    color: lightblue;
+    background-color: mediumpurple;
+    border-color: mediumpurple;
+}
+
+.btn-secondary {
+    background-color: #000080;
+    color: #b9a0e3;
+    border-color: #000080;
+}
+
+.btn-secondary:hover {
+    color: lightblue;
+    background-color: #19195a;
+    border-color: #19195a;
+}
+
+.btn-danger:hover {
+    color: #19195a;
+    background-color: hotpink;
+    border-color: hotpink;
+}
+
+.btnprimary {
+    color: mediumpurple;
+}
+
+.btnprimary:hover {
+    color: lightblue;
+}
+
+.btndanger {
+    color: hotpink;
+}
+
+.btndanger:hover {
+    color: red;
+}
+
+
+/*end of buttons*/
+
+
+
+/*input elements*/
+.input-box {
+    /*username, password*/
+    background-color: #b79fed;
+}
+/*end of input elements*/
+
+
+/*table styling*/
+.table thead {
+    background-color: #b9a0e3;
+    color: #19195a;
+}
+
+.table tbody td, .table thead th {
+    border: 1px solid #434343;
+}
+/*end of table styling*/

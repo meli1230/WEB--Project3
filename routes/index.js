@@ -8,7 +8,7 @@ const router = express.Router(); //create an express router instance for definin
 const { getEventsSortedByPrice } = require('../models/event'); //import function that sorts by price
 
 function isLoggedIn(req, res, next) {
-    //check if user is logged in
+    //Middleware to check if user is logged in
     if(req.isAuthenticated()) {
         return next(); //allow the request to proceed if logged in
     }

@@ -6,6 +6,7 @@ body {
 /*end of default elements*/
 
 
+
 /*buttons*/
 .btn-primary{
     background-color: #b9a0e3;
@@ -57,20 +58,18 @@ body {
 .btndanger:hover {
     color: red;
 }
-
-
 /*end of buttons*/
 
 
 
 /*input elements*/
 .input-box {
-    /*username, password*/
+    /*any input field*/
     background-color: #b79fed;
 }
 
 .input {
-    /*add event input boxes*/
+    /*add-event input boxes*/
     background-color: #b79fed;
     color: black;
 }
@@ -82,16 +81,18 @@ body {
 /*end of input elements*/
 
 
+
 /*table styling*/
 .table thead {
-    background-color: #b9a0e3;
+    background-color: #b9a0e3; /*background color for the head of the table*/
     color: #19195a;
 }
 
 .table tbody td, .table thead th {
-    border: 1px solid #434343;
+    border: 1px solid #434343; /*table lines*/
 }
 /*end of table styling*/
+
 
 
 /*justified text*/

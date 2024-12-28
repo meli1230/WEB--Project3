@@ -3,7 +3,7 @@
 ### `node app.js`
 - runs the application
 
-### `npm install express mysql2 ejs bcrypt passport passport-local express-session body-parser`
+### `npm install express mysql2 ejs bcrypt passport passport-local express-session`
 - `npm install`: installs Node.js modules using npm (node package manager)
 - `express` 
   - a web application framework for Node.js
@@ -30,8 +30,6 @@
 - `express-session`
   - used to persist user sessions across multiple requests
   - maintains the user session after login
-- `body-parser`
-  - parses data sent from forms, such as registration or login details
 ---
 # Added functionalities
 ### Sorting by price

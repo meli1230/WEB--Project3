@@ -1,3 +1,5 @@
+//DEFINES CRUD OPERATIONS RELATED TO USERS IN RELATION TO THE DATABASE
+
 const bcrypt = require('bcrypt'); //import the bcrypt library for hashing passwords
 const pool = require('../db'); //import the database connection pool for executing queries
 

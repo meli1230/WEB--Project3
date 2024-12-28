@@ -1,4 +1,6 @@
-const mysql = require('mysql2/promise');
+//CREATE AND EXPORT A CONNECTION POOL FOR THE DB
+
+const mysql = require('mysql2/promise'); //import the mysql2 library with promise support for async/await functionality
 
 const pool = mysql.createPool ({
     host: 'localhost',
@@ -6,6 +8,8 @@ const pool = mysql.createPool ({
     password: '',
     database: 'node_js_women_techpower',
     waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0,});
-module.exports = pool;
+    connectionLimit: 10, //max number of concurrent connections allowed in the pool
+    queueLimit: 0, //no limit on the number of requests that can wait in the queue
+});
+
+module.exports = pool; //export the connection pool for use in other part of the application

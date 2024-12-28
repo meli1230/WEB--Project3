@@ -1,92 +1,28 @@
-const express = require('express');
-const session = require('express-session');
+//SET UP THE MAIN EXPRESS APPLICATION AND STARTS THE SERVER
 
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const bcrypt = require('bcrypt');
-const pool = require('./db');
-const routes = require('./routes');
-const app = express();
-const PORT = process.env.PORT || 3000;
+const express = require('express'); //import the express framework for building the web server
+const session = require('express-session'); //import express-session for managing user sessions
+const passport = require('passport'); //import passport.js for user authentication
+const routes = require('./routes'); //import the routes defined in the routes folder
+const app = express(); //initialize an express application
+const PORT = process.env.PORT || 3000;//define the port for the server to run on (default to 3000 if not set)
 
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({extended: true}));
-app.use(session({secret: 'secret', resave: false, saveUninitialized: false}));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(express.static('public'));
+require('./auth'); //ensures Passport is configured
 
 
-passport.use(new LocalStrategy(async (username, password, done) => {
-    try {
-        const [rows] = await pool.query('SELECT * FROM users WHERE username = ?', [username]);
-        const user = rows[0];
-        if (!user) {
-            return done(null, false, {message: 'Incorrect username.'});
-        }
-        const passwordMatch = await bcrypt.compare(password, user.password);
-        if (!passwordMatch) {
-            return done(null, false, {message: 'Incorrect password.'});
-        }
-        return done(null, user);
-    } catch (error) {
-        return done(error);
-    }
+app.set('view engine', 'ejs'); //set EJS as the view engine
+app.use(express.urlencoded({extended: true})); //middleware to parse URL-encoded data from incoming requests (ex: form submission)
+app.use(session({ //middleware to configure session management
+    secret: 'secret', //session encryption secret key
+    resave: false, //do not save session if not modified
+    saveUninitialized: false //do not save uninitialized sessions
 }));
-passport.serializeUser((user, done) => {
-    done(null, user.id);
-});
-passport.deserializeUser(async (id, done) => {
-    try {
-        const [rows] = await pool.query('SELECT * FROM users WHERE id = ?', [id]);
-        const user = rows[0];
-        done(null, user);
-    } catch (error) {
-        done(error);
-    }
-});
-app.use('/', routes);
-app.get('/edit-event/:id', async (req, res) => {
-    try {
-        const eventId = req.params.id;
-        const [eventRows] = await pool.query('SELECT * FROM events WHERE id = ?', [eventId]);
-        const event = eventRows[0];
-        if (!event) {
-            return res.status(404).send('Event not found');
-        }
-        res.render('edit-event', { event });
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('An error occurred while retrieving the event.');
-    }
-});
-
-app.post('/edit-event/:id', async (req, res) => {
-    try {
-        const eventId = req.params.id;
-        const { title, speaker, price, description } = req.body;
-        await pool.query(
-            'UPDATE events SET title = ?, speaker = ?, price = ?, description = ? WHERE id = ?',
-            [title, speaker, price, description, eventId]
-        );
-        res.redirect('/events'); // Adjust the redirection as per your application's logic
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('An error occurred while updating the event.');
-    }
-});
-
-app.get('/delete-event/:id', async (req, res) => {
-    try {
-        const eventId = req.params.id;
-        await pool.query('DELETE FROM events WHERE id = ?', [eventId]);
-        res.redirect('/events'); // Adjust the redirection as per your application's logic
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('An error occurred while deleting the event.');
-    }
-});
+app.use(passport.initialize()); //initialize passport.js middleware for handling authentication
+app.use(passport.session()); //enable persistent login sessions with passport.js
+app.use(express.static('public')); //serve CSS file from the public directory
+app.use('/', routes); //use the imported routes for handling application routes
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    //start the server on the specified port
+    console.log(`Server is running on http://localhost:${PORT}`); //log a message indicating the server is running
 });

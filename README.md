@@ -1,3 +1,45 @@
+# Women TechPower - Node.js Web Application  
+
+## Overview  
+This project is a **Node.js and Express.js-based web application** for managing **events, job postings, mentorship programs, and user authentication**. It features **secure login, RESTful API endpoints, and database integration** to ensure scalable and efficient data handling.  
+
+## Features  
+
+### **User Authentication & Security**  
+- **User login & registration system**.  
+- **JWT-based authentication** for secure API access.  
+- **Password hashing & session management**.  
+
+### **Event & Job Management**  
+- **Create, update, delete, and view events and job listings**.  
+- **Database-driven CRUD operations**.  
+
+### **Mentorship Program**  
+- **Manage mentorship opportunities** with structured data.  
+- **API routes for mentorship details and interactions**.  
+
+### **RESTful API & Database Integration**  
+- **Express.js REST API** for event, job, and user management.  
+- **MongoDB database integration** using Mongoose.  
+- **Secure data validation and error handling**.  
+
+## **Project Structure**  
+app.js → Main application file.
+auth.js → Handles user authentication and JWT tokens.
+db.js → Database connection using MongoDB.
+routes/ → API endpoints for different modules.
+models/ → Mongoose schemas for structured data.
+public/ → Static assets (CSS, JavaScript, images).
+
+
+Technologies Used
+Node.js & Express.js (Backend Framework)
+MongoDB & Mongoose (Database)
+JWT Authentication (Security)
+RESTful API Design
+dotenv, bcrypt, jsonwebtoken (Security & Config)
+
+
 # Console commands
 
 ### `node app.js`

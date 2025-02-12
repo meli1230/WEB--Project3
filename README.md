@@ -1,46 +1,36 @@
-# Women TechPower - Node.js Web Application  
+# NodeJS Web App - Women Techpower
 
 ## Overview  
-This project is a **Node.js and Express.js-based web application** for managing **events, job postings, mentorship programs, and user authentication**. It features **secure login, RESTful API endpoints, and database integration** to ensure scalable and efficient data handling.  
+This project is a **Node.js-based web application** for managing **events, job postings, mentorship programs, and user authentication**. It features **secure login and database integration** to ensure scalable and efficient data handling.  
 
 ## Features  
 
 ### **User Authentication & Security**  
-- **User login & registration system**.  
-- **JWT-based authentication** for secure API access.  
-- **Password hashing & session management**.  
+- **User login & registration system**
+- **JWT-based authentication** for secure API access
+- **Password hashing & session management**
 
 ### **Event & Job Management**  
-- **Create, update, delete, and view events and job listings**.  
-- **Database-driven CRUD operations**.  
+- **Create, update, delete, and view events and job listings**  
+- **Database-driven CRUD operations**  
 
 ### **Mentorship Program**  
-- **Manage mentorship opportunities** with structured data.  
-- **API routes for mentorship details and interactions**.  
+- **Manage mentorship opportunities** with structured data  
+- **API routes for mentorship details and interactions**  
 
 ### **RESTful API & Database Integration**  
-- **Express.js REST API** for event, job, and user management.  
-- **MongoDB database integration** using Mongoose.  
-- **Secure data validation and error handling**.  
+- **Express.js REST API** for event, job, and user management  
+- **Secure data validation and error handling**  
 
 ## **Project Structure**  
-app.js → Main application file.
-auth.js → Handles user authentication and JWT tokens.
-db.js → Database connection using MongoDB.
-routes/ → API endpoints for different modules.
-models/ → Mongoose schemas for structured data.
-public/ → Static assets (CSS, JavaScript, images).
+- app.js → Main application file
+- auth.js → Handles user authentication and JWT tokens
+- db.js → Database connection using MySQL
+- routes/ → API endpoints for different modules
+- models/ → Mongoose schemas for structured data
+- public/ → Static assets (CSS, JavaScript, images)
 
-
-Technologies Used
-Node.js & Express.js (Backend Framework)
-MongoDB & Mongoose (Database)
-JWT Authentication (Security)
-RESTful API Design
-dotenv, bcrypt, jsonwebtoken (Security & Config)
-
-
-# Console commands
+## Console commands used
 
 ### `node app.js`
 - runs the application
@@ -72,13 +62,3 @@ dotenv, bcrypt, jsonwebtoken (Security & Config)
 - `express-session`
   - used to persist user sessions across multiple requests
   - maintains the user session after login
----
-# Added functionalities
-### Sorting by price
-- `Sort by Price Ascending`: sorts the events by price, ascending
-- `Sort by Price Descending`: sorts the events by price, descending
-- `Reset Sorting`: resets all sorting filters, going to the initial state of the page
-
-### View event button
-- `View`: allows you to view all event details, including the description of the event which is not visible anywhere else
-
